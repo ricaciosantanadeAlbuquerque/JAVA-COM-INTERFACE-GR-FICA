@@ -27,7 +27,7 @@ public class Dados extends javax.swing.JInternalFrame {
         
                   boolean busca = false;
                   
-            for(Cliente p :novoVetor){
+            for(Cliente p :novoVetor){ // busca linear
               if(p.getNome().equals(this.login) && p.getSenha().equals(this.senha)){
                jTextField1.setText(p.getNome());
                jTextField2.setText(p.getCpf());
@@ -121,6 +121,11 @@ public class Dados extends javax.swing.JInternalFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Excluir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -232,7 +237,7 @@ public class Dados extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
+         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -244,9 +249,10 @@ public class Dados extends javax.swing.JInternalFrame {
         String senha = jTextField5.getText();
         int id = Integer.parseInt(jLabel8.getText());
         Cliente novoCliente = new Cliente(id,nome,cpf,celular,sexo,senha);
-        System.out.println(novoCliente.toString());
+       // System.out.println(novoCliente.toString());
         Gerente novoGerente = new Gerente();
         novoGerente.atualizar(novoCliente);
+        //JOptionPane.showMessageDialog(null,"Dados Atualizados com sucesso ! ");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -259,6 +265,40 @@ public class Dados extends javax.swing.JInternalFrame {
         jTextField5.setText("");
  
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Gerente novoGenrente = new Gerente();
+        Cliente novoCliente = new Cliente();
+      ArrayList<Cliente> lista = new ArrayList();
+      lista = novoGenrente.listarGeral();
+      boolean achou = false;
+      for(Cliente p : lista){
+          if(p.getNome().equals(this.login)&& p.getSenha().equals(this.senha) ){
+              System.out.println(p.toString());
+              novoGenrente.excluir(p);
+              achou = true;
+              break;
+          }
+      }
+      if(achou == true){
+          JOptionPane.showMessageDialog(null,"Dados excluidos com Sucesso! ");
+      }else{
+          JOptionPane.showMessageDialog(null,"ERRO! dados  não foram excluidos !");
+      }
+       
+       jTextField1.setText("");
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jLabel8.setText("");
+        for(int i =0; i <=1000;i++){
+            if(i == 1000 ){
+               this.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

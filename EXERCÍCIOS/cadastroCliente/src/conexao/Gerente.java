@@ -44,7 +44,8 @@ public class Gerente {
             statement.setString(4,dados.getSexo());
             statement.setString(5,dados.getSenha());
             statement.setInt(6,dados.getId());
-            statement.executeQuery();
+            statement.executeUpdate(); // O erro aque está em usar ' executeQuery
+            // você pode usar o executeUpdate ou o execute()
             JOptionPane.showMessageDialog(null,"Dados Salvos com sucesso ! ");
         } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null,"ERRO! ao conectar com o banco de dados "+ex.toString());
@@ -62,7 +63,7 @@ public class Gerente {
             statement = db.connection.prepareStatement(sql);
             statement.setString(1,dados.getCpf());
             statement.setInt(2,dados.getId());
-            statement.executeQuery();
+            statement.execute();
         } catch (SQLException ex) {
           JOptionPane.showMessageDialog(null,"ERRO! ao conectar com o banco de dados "+ex.toString());
         }

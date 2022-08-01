@@ -74,6 +74,11 @@ public class Cadastro extends javax.swing.JInternalFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/excluir.png"))); // NOI18N
         jButton2.setText("Sair");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Senha");
 
@@ -185,12 +190,22 @@ public class Cadastro extends javax.swing.JInternalFrame {
        
        Gerente gerente = new Gerente(); 
         gerente.cadastrar(cliente);
-        
+            JOptionPane.showMessageDialog(null,"Dados cadastrados com sucesso! ");
+              jTextField1.setText("");
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
        }else{
            JOptionPane.showMessageDialog(null,"Senha não confere!");
        }
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
