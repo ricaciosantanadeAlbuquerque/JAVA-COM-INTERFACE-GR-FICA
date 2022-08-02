@@ -72,3 +72,17 @@ EXERCÍCIOS/mercadinho/nbproject/private/private.properties
 EXERCÍCIOS/mercadinho/nbproject/project.properties
 EXERCÍCIOS/mercadinho/build/classes/view/Controle.form
 EXERCÍCIOS/mercadinho/manifest.mf
+EXERCÍCIOS/escola-banco-de-dados/build.xml
+EXERCÍCIOS/escola-banco-de-dados/build/classes/.netbeans_automatic_build
+EXERCÍCIOS/escola-banco-de-dados/build/classes/.netbeans_update_resources
+EXERCÍCIOS/escola-banco-de-dados/build/classes/modelo/Aluno.class
+EXERCÍCIOS/escola-banco-de-dados/build/classes/persistencia/Conexao.class
+EXERCÍCIOS/escola-banco-de-dados/build/classes/persistencia/JDBCAluno.class
+EXERCÍCIOS/escola-banco-de-dados/build/classes/vista/Vista.class
+EXERCÍCIOS/escola-banco-de-dados/manifest.mf
+EXERCÍCIOS/escola-banco-de-dados/nbproject/build-impl.xml
+EXERCÍCIOS/escola-banco-de-dados/nbproject/genfiles.properties
+EXERCÍCIOS/escola-banco-de-dados/nbproject/project.xml
+EXERCÍCIOS/escola-banco-de-dados/nbproject/project.properties
+EXERCÍCIOS/escola-banco-de-dados/nbproject/private/private.xml
+EXERCÍCIOS/escola-banco-de-dados/nbproject/private/private.properties
